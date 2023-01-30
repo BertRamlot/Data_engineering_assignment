@@ -1,8 +1,10 @@
-from flask import Flask, jsonify
-import pandas as pd
 from typing import Dict, Tuple
 
+import pandas as pd
+from flask import Flask, jsonify
+
 from stack_overflow_survey import StackOverflowSurvey
+
 
 surveyData = StackOverflowSurvey()
 data, age_mapping = surveyData.get_first_coding_age_data(2021)

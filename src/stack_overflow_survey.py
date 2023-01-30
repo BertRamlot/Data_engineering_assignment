@@ -1,7 +1,8 @@
 import os
 import re
-import pandas as pd
 from collections import Counter
+
+import pandas as pd
 
 
 class StackOverflowSurvey:
@@ -76,8 +77,8 @@ class StackOverflowSurvey:
         """
         Retrieve the mass function of the first coding age of each surveyed country.
         :param year: The year of the survey.
-        :return: Tuple:
-        - first element: data frame containing the mass function.
+        :return: Tuple with
+        - first element: data frame containing among other things the mass function.
         - second element: sorted mapping of the age range to a numerical value.
         """
         raw_df = self.get_all_data(year)

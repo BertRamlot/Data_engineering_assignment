@@ -17,6 +17,8 @@ class TestStackOverflowSurvey(unittest.TestCase):
         for expected_col in ["Country", "Alpha-2 code", "Alpha-3 code"]:
             self.assertIn(expected_col, all_data.columns)
 
+        self.assertGreater(len(all_data), 0)
+
     def test_get_country_coding_age_data(self):
         gdp_age_df, age_mapping = self.survey.get_first_coding_age_data(self.year)
 
@@ -33,6 +35,8 @@ class TestStackOverflowSurvey(unittest.TestCase):
 
         for expected_col in ["year", "Country", "Alpha-2 code", "Alpha-3 code", "CP_EUR_HAB"]:
             self.assertIn(expected_col, gdp_age_df.columns)
+
+        self.assertGreater(len(gdp_age_df), 0)
 
 
     def test_invalid_year(self):
