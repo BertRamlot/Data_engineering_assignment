@@ -23,16 +23,12 @@ comparison. Use a visual plot to support your conclusion(s).**
 Solution: [src/gdp_age_correlation_analysis.ipynb](src/gdp_age_correlation_analysis.ipynb) (contains plots)
 
 ### In short:
-There is almost definitely no statistically significant correlation between the GDP of a country and the youngest age range.
+There is almost definitely no statistically significant correlation between the GDP of a country and when the developers of that country first start coding.
 
 ### In long:
 The situation is a bit more complex due to the mass function of the age ranges being random variables and some data points having few samples. Ideally, there would be a statistical test for such a problem that takes the variance of the random variable into account (but I know of no such test). Thus I resorted to filtering on the number of samples (requiring at least k samples). This is certainly not ideal and this brings its own problems (e.g. amount of samples might be correlated with gdp, coding age, ...).
 
-I suspected that there would be a correlation, thus I tried to argue that there is one. To do this I used the Pearson correlation coefficient.
-
-First I looked at the average coding age, but I was not able to refute the null hypothesis for non-cherry-picked k values.
-
-Suspecting now that there is no correlation, I compared each age range individually to the reference (correcting the p values, see the Multiple comparisons problem) and found again that I was not able to refute the null hypothesis for non-cherry-picked k values. (The corrected p-value with relation to k is plotted in the notebook).
+I compared each age range individually to the reference (correcting the p values, see the Multiple comparisons problem) and found that I was not able to refute the null hypothesis for non-cherry-picked k values. (The corrected p-value with relation to k is plotted in the notebook).
 
 
 To further support my conclusion, I plot the age densities for each country, with a slider to filter on GDP. It is indeed not clear that there is any correlation.
@@ -68,4 +64,4 @@ The notebook above:
 
 I used the column 'LanguageWorkedWith' to get the top 3 programming languages. This column is only available for 2021.
 
-The SQL table is not cleaned/properly imported, I focussed on the SQL query writing aspect. Properly importing the survey results would most likely lead to moving columns such as 'LanguageWorkedWith' to their own separate table, which is a valid alternative approach.
+The SQL table is not cleaned, I focussed on the SQL query writing aspect. Properly importing the survey results would most likely lead to moving columns such as 'LanguageWorkedWith' to their own separate table, which is a valid alternative approach.
